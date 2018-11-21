@@ -80,24 +80,11 @@
     <Compile Include="Assets\Script\PopUpManager\PopUpBase.cs" />
     <Compile Include="Assets\Script\PopUpManager\PopUpInterface.cs" />
     <Compile Include="Assets\Script\PopUpManager\PopUpManager.cs" />
-    <Compile Include="Assets\Scripts\Act_Common_Script\FacialOffset.cs" />
-    <None Include="Assets\Shader\Shield_No_Flicker.shader" />
-    <None Include="Assets\Material\BackGround\BackGround.shader" />
-    <None Include="Assets\Shader\SDR_CHR_Alpha_1bit.shader" />
-    <None Include="Assets\Shader\SDR_CHR.shader" />
-    <None Include="Assets\Shader\SDR_CHR_Alpha.shader" />
-    <None Include="Assets\Shader\AlphaBlendedWithGrow.shader" />
-    <None Include="Assets\Shader\SDR_CHR_WPN.shader" />
-    <None Include="Assets\Shader\AddMultiply.shader" />
-    <None Include="Assets\Shader\TextureAlpha.shader" />
-    <None Include="Assets\Shader\AdditiveWithGrow.shader" />
-    <None Include="Assets\Shader\Texture.shader" />
-    <None Include="Assets\Shader\TransparentRim.shader" />
-    <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/rkimura/Root/Bio/BioProject/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
       <HintPath>C:/Users/rkimura/Root/Bio/BioProject/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor.StandardEvents">
+      <HintPath>C:/Users/rkimura/Root/Bio/BioProject/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
