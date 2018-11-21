@@ -80,11 +80,11 @@
     <Compile Include="Assets\Script\PopUpManager\PopUpBase.cs" />
     <Compile Include="Assets\Script\PopUpManager\PopUpInterface.cs" />
     <Compile Include="Assets\Script\PopUpManager\PopUpManager.cs" />
-    <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/rkimura/Root/Bio/BioProject/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/rkimura/Root/Bio/BioProject/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PackageManagerUI.Editor">
+      <HintPath>C:/Users/rkimura/Root/Bio/BioProject/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
