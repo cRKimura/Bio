@@ -1,42 +1,42 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using Common.Base;
 
 namespace GameMain {
     public class Title : BaseBehaviour
     {
-        [SerializeField] private EventFrame touchFrame;
+        [SerializeField] private GameObject titleObject;
+        [SerializeField] private Button startButton;
 
         public System.Action TouchCallBack { set; private get; }
 
         protected override void OnAwake()
         {
-            touchFrame.AddCallBack(EventTriggerType.PointerUp, OnTouchFrameCallBack);
+            startButton.onClick.AddListener(GameStartCallBack);
+            titleObject.SetActive(false);
             base.OnAwake();
         }
 
         public void Initialize()
         {
-            this.gameObject.SetActive(true);
-            UpdateManager.Instance.AddUpdateTarget(this);
+            titleObject.SetActive(true);
         }
         protected override void Destroy()
         {
-            Debug.Log("e???");
-            touchFrame.AllRemoveCallBack();
+            startButton.onClick.RemoveAllListeners();
             base.Destroy();
         }
 
-        private void OnTouchFrameCallBack(BaseEventData b)
+        private void GameStartCallBack()
         {
-            Debug.Log("あれ？");
+            titleObject.SetActive(false);
             if (TouchCallBack != null)
             {
                 TouchCallBack();
             }
-            this.gameObject.SetActive(false);
         }
     }
 }

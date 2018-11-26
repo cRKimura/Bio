@@ -6,14 +6,16 @@ using UnityEngine.UI;
 namespace Common.Tween
 {
     [RequireComponent(typeof(Graphic))]
-    public class TweenColor : TweenBase
+    public class TweenAlpha : TweenBase
     {
-        [SerializeField] private Color startColor = Color.white;
-        [SerializeField] private Color endColor = Color.white;
+        [SerializeField, Range(0f, 1f)] private float startAlpha = 1f;
+        [SerializeField, Range(0f, 1f)] private float endAlpha = 1f;
 
         private Graphic graphic = null;
         private float originalAlpha;
         private Color changeColor;
+        private float changeAlpha;
+        // Use this for initialization
         protected override void OnAwake()
         {
             base.OnAwake();
@@ -23,8 +25,9 @@ namespace Common.Tween
 
         protected override void UpdateProc()
         {
-            changeColor = Color.LerpUnclamped(startColor, endColor, GetPlayPer());
-            changeColor.a = originalAlpha;
+            changeAlpha = Mathf.Lerp(startAlpha, endAlpha, GetPlayPer());
+            changeColor = this.graphic.color;
+            changeColor.a = changeAlpha;
             this.graphic.color = changeColor;
         }
     }

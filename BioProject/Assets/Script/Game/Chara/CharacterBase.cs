@@ -8,16 +8,33 @@ namespace Character
     public class CharacterBase : BaseBehaviour
     {
         private Vector3 moveDir = Vector3.zero;
-        private float speed = 0.1f;
-        public void SetMoveDir(Vector3 dir)
+        protected CharaStatus charaStatus;
+        public CharaStatus GetStatus() { return charaStatus; }
+
+        public System.Action DeadCallBack = null;
+        public void SetCharaStatus(float hp, float speed)
         {
-            moveDir = dir;
+            charaStatus.maxHp = hp;
+            charaStatus.hp = hp;
+            charaStatus.speed = speed;
+            charaStatus.state = CharaState.Alone;
+        }
+
+        public void SetMoveDir(Vector2 dir)
+        {
+            moveDir.x = dir.x;
+            moveDir.y = dir.y;
         }
 
         public override void UpdateCallBack(float addTime)
         {
-            this.transform.localPosition += speed * moveDir;
+            this.transform.localPosition += charaStatus.speed * moveDir;
             base.UpdateCallBack(addTime);
+        }
+
+        public virtual void DeadEffects()
+        {
+            // 死亡演出関数
         }
     }
 }
