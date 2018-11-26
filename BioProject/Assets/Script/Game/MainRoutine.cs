@@ -7,7 +7,7 @@ namespace GameMain {
     public class MainRoutine : BaseBehaviour
     {
         [SerializeField] private Title title;
-        [SerializeField] private Shooting gameMain;
+        [SerializeField] private Battle gameMain;
 
         protected override void OnAwake()
         {
@@ -15,7 +15,7 @@ namespace GameMain {
             Application.targetFrameRate = Define.FrameRate;
             title.Initialize();
             title.TouchCallBack = GameStartCallBack;
-            gameMain.gameObject.SetActive(false);
+            gameMain.GameOverCallBack = GameEndCallBack;
             base.OnAwake();
         }
 
@@ -26,8 +26,12 @@ namespace GameMain {
 
         private void GameStartCallBack()
         {
-            gameMain.gameObject.SetActive(true);
             gameMain.GameStartInitialize();
+        }
+
+        private void GameEndCallBack()
+        {
+            title.Initialize();
         }
 
         protected override void Destroy()

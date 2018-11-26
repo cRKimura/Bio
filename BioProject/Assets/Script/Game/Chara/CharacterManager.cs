@@ -23,11 +23,18 @@ namespace GameMain
             base.UpdateCallBack(addTime);
         }
 
-        public void GameStartInitialize()
+        public void GameStartInitialize(System.Action playerDeadCallBack)
         {
             // Playerの作成
-            playChara = GameObject.Instantiate<PlayCharacter>( Resources.Load<PlayCharacter>("Prefab/Chara/tubasa") );
+            playChara = GameObject.Instantiate<PlayCharacter>( Resources.Load<PlayCharacter>("Prefab/Chara/PlayerObject") );
             playChara.transform.SetParent(charaParent.transform);
+            playChara.SetCharaStatus(10f, 0.1f);
+            playChara.DeadCallBack = playerDeadCallBack;
+        }
+
+        public void GameEnd()
+        {
+            GameObject.Destroy(playChara.gameObject);
         }
     }
 }
